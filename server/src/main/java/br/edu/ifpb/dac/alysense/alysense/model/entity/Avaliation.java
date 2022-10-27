@@ -9,13 +9,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import lombok.Getter;
 import lombok.Setter;
 
+
+@Entity
 @Getter
 @Setter
-@Entity
 public class Avaliation{
 
     @Id
@@ -28,37 +28,16 @@ public class Avaliation{
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<EvalueteItem> evalueteItems;
-
-	public synchronized Long getId() {
-		return id;
-	}
-
-	public synchronized void setId(Long id) {
-		this.id = id;
-	}
-
-	public synchronized String getAnswer() {
-		return answer;
-	}
-
-	public synchronized void setAnswer(String answer) {
-		this.answer = answer;
-	}
-
-	public synchronized String getTitleEvent() {
-		return titleEvent;
-	}
-
-	public synchronized void setTitleEvent(String titleEvent) {
-		this.titleEvent = titleEvent;
-	}
-
-	public synchronized List<EvalueteItem> getEvalueteItems() {
-		return evalueteItems;
-	}
-
-	public synchronized void setEvalueteItems(List<EvalueteItem> evalueteItems) {
-		this.evalueteItems = evalueteItems;
-	}
+    
+    
+    public boolean isValidString(String name) {
+    	for (int i = 0; i < name.length(); i++) {
+			char indexName = name.charAt(i);
+    		if(Character.isDigit(indexName) == true) {
+				return false;
+			}
+		}
+    	return true;
+    }
     
 }

@@ -23,20 +23,5 @@ public class Characteristic {
     
     private String atribute;
 
-	public String getAtribute() {
-		return atribute;
-	}
-
-	public void setAtribute(String atribute) {
-		this.atribute = atribute;
-	}
-
-	public synchronized Long getId() {
-		return id;
-	}
-
-	public synchronized void setId(Long id) {
-		this.id = id;
-	}
-     
+	
 }

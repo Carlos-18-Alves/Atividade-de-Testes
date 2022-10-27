@@ -21,20 +21,4 @@ public class Note {
 
     private float scale;
 
-	public synchronized Long getId() {
-		return id;
-	}
-
-	public synchronized void setId(Long id) {
-		this.id = id;
-	}
-
-	public synchronized float getScale() {
-		return scale;
-	}
-
-	public synchronized void setScale(float scale) {
-		this.scale = scale;
-	}
-	
 }

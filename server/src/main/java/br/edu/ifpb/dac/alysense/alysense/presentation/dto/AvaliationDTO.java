@@ -5,6 +5,7 @@ import br.edu.ifpb.dac.alysense.alysense.model.entity.EvalueteItem;
 import lombok.Getter;
 import lombok.Setter;
 
+
 @Getter
 @Setter
 public class AvaliationDTO {

@@ -21,21 +21,6 @@ public class Role implements GrantedAuthority{
 
     private String name;
 
-    public synchronized Long getId() {
-		return id;
-	}
-
-	public synchronized void setId(Long id) {
-		this.id = id;
-	}
-
-	public synchronized String getName() {
-		return name;
-	}
-
-	public synchronized void setName(String name) {
-		this.name = name;
-	}
 
 	@Override
     public String getAuthority() {

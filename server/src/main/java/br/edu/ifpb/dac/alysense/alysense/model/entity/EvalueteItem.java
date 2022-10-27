@@ -11,6 +11,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
 public class EvalueteItem {
 
 	@Id
@@ -26,46 +28,6 @@ public class EvalueteItem {
 
 	@OneToOne(fetch = FetchType.EAGER, cascade = { CascadeType.ALL }, orphanRemoval = true)
 	private Note note;
-
-	public synchronized Long getId() {
-		return id;
-	}
-
-	public synchronized void setId(Long id) {
-		this.id = id;
-	}
-
-	public synchronized String getQuestion() {
-		return question;
-	}
-
-	public synchronized void setQuestion(String question) {
-		this.question = question;
-	}
-
-	public synchronized Long getEvaluator() {
-		return evaluator;
-	}
-
-	public synchronized void setEvaluator(Long evaluator) {
-		this.evaluator = evaluator;
-	}
-
-	public synchronized Sample getSample() {
-		return sample;
-	}
-
-	public synchronized void setSample(Sample sample) {
-		this.sample = sample;
-	}
-
-	public synchronized Note getNote() {
-		return note;
-	}
-
-	public synchronized void setNote(Note note) {
-		this.note = note;
-	}
 	
 	
 
