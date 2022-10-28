@@ -2,6 +2,9 @@ package br.edu.ifpb.dac.alysense.alysense.model.entity;
 
 
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,6 +25,18 @@ public class Characteristic {
     private Long id;
     
     private String atribute;
+    
+    public boolean validateAtribute() {      
+    	Pattern p = Pattern.compile("^[A-Za-z]*$");
+		Matcher m = p.matcher(atribute);
+		
+		if(m.matches()){
+			return true;
+		} else {
+			setAtribute(null);
+			return false;
+		}	
+    }
 
 	
 }

@@ -19,52 +19,49 @@ public class AvaliationTests {
 	
 	private static Avaliation avaliation = new Avaliation();
 	
-	
 	@Test
-	@DisplayName("Verific if the answer don`t contain number")
-	public void suceedingTestAnswer ( ){
+	@DisplayName("Verify if the answer doesn't contain numbers")
+	public void succedingTestAnswer ( ){
 		avaliation.setAnswer("Good");
 		assertTrue(avaliation.isValidString(avaliation.getAnswer()));
 	}
 	
 	@ParameterizedTest
-	@DisplayName("Verific if many answers don`t contain number")
-	@ValueSource(strings = {"Very Good", "Bad", "Very Bad", "Horrible", "Im dont like", "acessível", 
+	@DisplayName("Verify if many answers don't contain number")
+	@ValueSource(strings = {"Very Good", "Bad", "Very Bad", "Horrible", "I don't like", "acessível", 
 			"admirável"})
-	public void suceedingTestsAnswers (String strings) {
+	public void succedingTestsAnswers (String strings) {
 		assertTrue(avaliation.isValidString(strings));
 	}
 	
 	@Test
-	@DisplayName("Verific if the answer contain number")
+	@DisplayName("Verify if the answer contains numbers")
 	public void failingTestAnswer ( ){
 		avaliation.setAnswer("Good34");
 		assertFalse(avaliation.isValidString(avaliation.getAnswer()));
 	}
 	
 	@ParameterizedTest
-	@DisplayName("Verific if many answers contain number")
-	@ValueSource(strings = {"Very 45", "32425235", "V3ry B4d", "Horr1ble", "1Im dont like", "1 2 3 4 5", 
+	@DisplayName("Verify if many answers contain numbers")
+	@ValueSource(strings = {"Very 45", "32425235", "V3ry B4d", "Horr1ble", "1I dont like", "1 2 3 4 5", 
 			"h534fsdf123e"})
 	public void failingTestsAnswers (String strings) {
 		assertFalse(avaliation.isValidString(strings));
 	}
 	
 	@Test
-	@DisplayName("Verific if the eventTitle is created ")
-	public void suceedingTestEventTitle ( ){
+	@DisplayName("Verify if the eventTitle is created ")
+	public void succedingTestEventTitle ( ){
 		avaliation.setTitleEvent("Japanese Food");
 		assertEquals("Japanese Food", avaliation.getTitleEvent());
 	}
 	
-	
 	@ParameterizedTest
-	@DisplayName("Verific if many eventsTitles is created")
-	@ValueSource(strings = {"2° Food Truck", "Mexican Party", "Only Fish", "23 years with chicken" })
-	public void suceedingTestsEventTitle (String strings) {
+	@DisplayName("Verify if many eventTitles are created")
+	@ValueSource(strings = {"2 Food Truck", "Mexican Party", "Only Fish", "23 years with chicken" })
+	public void succedingTestsEventTitle (String strings) {
 		avaliation.setTitleEvent(strings);
 		assertEquals(strings, avaliation.getTitleEvent());
 	}
-	
 
 }
