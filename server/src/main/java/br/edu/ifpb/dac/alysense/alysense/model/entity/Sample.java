@@ -1,6 +1,5 @@
 package br.edu.ifpb.dac.alysense.alysense.model.entity;
 
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,6 +23,5 @@ public class Sample {
     private Long code = (long) Math.floor(Math.random() * 1001);
 
     private String detailsSample;
-
     
 }

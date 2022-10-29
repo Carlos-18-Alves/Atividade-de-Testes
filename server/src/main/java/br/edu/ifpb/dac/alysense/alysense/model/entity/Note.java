@@ -20,5 +20,12 @@ public class Note {
 	private Long id;
 
     private float scale;
+    
+    public boolean validateScale() {
+		if(scale>=0 && scale<=10) {
+			return true;
+		}
+		return false;
+	}
 
 }

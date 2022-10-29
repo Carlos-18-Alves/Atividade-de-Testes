@@ -2,6 +2,7 @@ package br.edu.ifpb.dac.alysense.alysense.UnitaryTests.Characteristic;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.DisplayName;
@@ -32,10 +33,11 @@ public class CharacteristicTests {
 	}
     
 	@Test
-	@DisplayName("Verify if the atribute is invalid")
+	@DisplayName("Verify if the atribute is invalid and if it was set null")
 	public void failingTests(){
 		characteristic.setAtribute("M@ssa Dema&s");
 		assertFalse(characteristic.validateAtribute());
+		assertNull(characteristic.getAtribute());
 	}
 	
 	@ParameterizedTest

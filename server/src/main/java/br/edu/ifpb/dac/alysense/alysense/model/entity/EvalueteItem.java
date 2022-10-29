@@ -1,5 +1,8 @@
 package br.edu.ifpb.dac.alysense.alysense.model.entity;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -29,6 +32,16 @@ public class EvalueteItem {
 	@OneToOne(fetch = FetchType.EAGER, cascade = { CascadeType.ALL }, orphanRemoval = true)
 	private Note note;
 	
-	
+	public boolean validateQuestion() {      
+    	Pattern p = Pattern.compile("^[A-Za-z]*$");
+		Matcher m = p.matcher(question);
+		
+		if(m.matches()){
+			return true;
+		} else {
+			setQuestion(question);
+			return false;
+		}	
+    }
 
 }
