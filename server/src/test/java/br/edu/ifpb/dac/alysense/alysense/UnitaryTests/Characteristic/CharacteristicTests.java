@@ -42,7 +42,7 @@ public class CharacteristicTests {
 	
 	@ParameterizedTest
 	@DisplayName("Verify if some atributes are invalid")
-	@ValueSource(strings = {"Sweet#", "CJ..", "Big $moke", "Cas21", "Kleito$", "1real"})
+	@ValueSource(strings = {"Sweet#", "CJ..", "Big $moke", "Rid3r", "Kleito$", "1real"})
 	void invalidChar(String characteristic) {
 		this.characteristic.setAtribute(characteristic);
 		assertFalse(this.characteristic.validateAtribute());

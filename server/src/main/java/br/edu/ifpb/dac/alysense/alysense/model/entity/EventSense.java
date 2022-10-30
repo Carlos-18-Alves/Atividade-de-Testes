@@ -48,6 +48,4 @@ public class EventSense {
 
     private Long admUser;
 
-
-
 }
