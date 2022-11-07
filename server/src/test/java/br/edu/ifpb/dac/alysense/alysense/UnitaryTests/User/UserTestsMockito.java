@@ -59,6 +59,7 @@ public class UserTestsMockito {
 		assertNotNull(userMock.getEmail());
 		assertFalse(userMock.validateEmail());
 		
+		
 		when(userMock.getEmail()).thenReturn("pessoa@ifpb.edu.br");
 		assertTrue(userMock.getEmail().contains("@"));
 		

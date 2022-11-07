@@ -34,12 +34,12 @@ public class EvalueteItem {
 	
 	public boolean validateQuestion() {      
     	Pattern p = Pattern.compile("^[A-Za-z]*$");
-		Matcher m = p.matcher(question);
+		Matcher m = p.matcher(getQuestion());
 		
 		if(m.matches()){
 			return true;
 		} else {
-			setQuestion(question);
+			setQuestion(null);
 			return false;
 		}	
     }
