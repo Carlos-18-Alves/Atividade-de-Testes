@@ -4,24 +4,34 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
-
-
+import org.junit.Before;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+import org.junit.runner.RunWith;
+import org.mockito.MockitoAnnotations;
+import org.mockito.junit.MockitoJUnitRunner;
 
+import br.edu.ifpb.dac.alysense.alysense.business.service.AvaliationService;
 import br.edu.ifpb.dac.alysense.alysense.model.entity.Avaliation;
+import junit.framework.Assert;
+
 
 
 public class AvaliationTests {
 	
 	private static Avaliation avaliation = new Avaliation();
 	
+	
+	
 	@Test
 	@DisplayName("Verify if the answer doesn't contain numbers")
 	public void succedingTestAnswer ( ){
+		
 		avaliation.setAnswer("Good");
 		assertTrue(avaliation.isValidString(avaliation.getAnswer()));
 	}

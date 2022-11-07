@@ -39,5 +39,8 @@ public class Product {
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Sample> samples;
+    
+    
+    
 	
 }
