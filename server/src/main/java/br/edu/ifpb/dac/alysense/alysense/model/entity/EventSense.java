@@ -47,5 +47,13 @@ public class EventSense {
     private List<Product> items;
 
     private Long admUser;
+    
+    public boolean isValidAge(int value) {
+    	if (value < 18 ) {
+    		return false;
+    	}
+    	return true;
+    }
+    
 
 }

@@ -5,7 +5,6 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import org.junit.Before;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.mockito.MockitoAnnotations;
@@ -24,7 +23,6 @@ public class AvaliationTestsMockito {
 	}
 	
 	@Test
-	@DisplayName("Verify if the answer doesn't contain numbers")
 	public void succedingTestAnswer ( ){
 		
 		when(avaliationMock.isValidString("Good")).thenReturn(true);

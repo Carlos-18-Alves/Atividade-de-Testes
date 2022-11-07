@@ -1,14 +1,19 @@
 package br.edu.ifpb.dac.alysense.alysense.UnitaryTests.Event;
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
 import java.time.LocalDate;
 
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import br.edu.ifpb.dac.alysense.alysense.model.entity.EventSense;
 
@@ -31,6 +36,22 @@ public class EventsTests {
 		assertNull(eventSense.getAdmUser());
 		assertEquals(eventSense.getMinimunAge(), 18);
 		assertEquals(eventSense.getPeopleLimit(), 30);
+		
 	}
+
+	@ParameterizedTest
+	@ValueSource(ints = { 1, 15, 14, 8, 0, -1 })
+	public void failingTestsAnswers(int ints) {
+		assertFalse(eventSense.isValidAge(ints));
+	}
+
+	@ParameterizedTest
+	@ValueSource(ints = { 18, 35, 40, 56, 222, 100 })
+	public void sucessingTestsAnswers(int ints) {
+		assertTrue(eventSense.isValidAge(ints));
+	}
+		
+		
+	
 	
 }
