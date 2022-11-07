@@ -15,10 +15,8 @@ import br.edu.ifpb.dac.alysense.alysense.model.entity.Avaliation;
 
 @RunWith(MockitoJUnitRunner.class)
 public class AvaliationTestsMockito {
-
 	
 	private Avaliation avaliationMock = mock(Avaliation.class);
-	
 		
 	@Before
 	public void init() {
