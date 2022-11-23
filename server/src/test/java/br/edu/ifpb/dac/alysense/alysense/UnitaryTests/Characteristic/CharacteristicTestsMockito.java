@@ -1,6 +1,7 @@
 package br.edu.ifpb.dac.alysense.alysense.UnitaryTests.Characteristic;
 
-import static org.junit.Assert.assertTrue;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
